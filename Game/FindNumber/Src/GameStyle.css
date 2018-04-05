@@ -19,14 +19,15 @@ h1
 }
 img
 {
-    height: 400px;
+    height: 400 px;
     width: auto;
 }
 #Jesus
 {
-    width: 600px;
-    height: 200px;
+    width: 600 px;
+    height: 200 px;
     margin: 0 auto;
+    margin-top: 300 px;
 }
 a
 {
