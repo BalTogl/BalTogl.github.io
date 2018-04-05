@@ -78,6 +78,7 @@ function GameEnd ()
     button.disabled=true;
     window.removeEventListener("keydown", keydownHandler, false);
     input.disabled=true;
+    render();
 }
 function render()
 {
