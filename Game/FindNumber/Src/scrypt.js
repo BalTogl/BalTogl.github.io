@@ -8,8 +8,8 @@ var GameWinner= false;
 var input=document.querySelector ("#input");
 var output=document.querySelector ("#output");
 var button=document.querySelector ("button");
-button.style.cursor= "help";
 button.addEventListener("click", clickCatcher, false);
+var arrow = document.querySelector("#arrow");
 window.addEventListener("keydown", keydownCatcher, false);
 function keydownCatcher(event)
 {
@@ -78,4 +78,8 @@ function GameEnd ()
     button.disabled=true;
     window.removeEventListener("keydown", keydownHandler, false);
     input.disabled=true;
+}
+function render()
+{
+arrow.style.left = playersGuess * 3 + "px";
 }
