@@ -6,7 +6,7 @@ body
 }
 #GodKnowsITry
 {
-   height: 50%;
+   height: 800px;
    background-color: #fff;
    width: 800px;
    margin: 0 auto;
@@ -80,7 +80,7 @@ height: 33px;
 position: absolute;
 top: 0px;
 left: 0px;
-background-image: url(../images/scale.png);
+background-image: url(../Images/scale.png);
 }
 #arrow
 {
@@ -89,7 +89,7 @@ height: 22px;
 position: absolute;
 top: 0px;
 left: 0px;
-background-image: url(../images/arrow.png);
+background-image: url(../Images/arrow.png);
 -webkit-transition: left 0.5s ease-out 0s;
 -moz-transition: left 0.5s ease-out 0s;
 transition: left 0.5s ease-out 0s;
