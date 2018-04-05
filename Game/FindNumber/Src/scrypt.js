@@ -27,7 +27,7 @@ function VaLiDaToR()
     Guess=parseInt(input.value);
     if (isNaN(Guess))
     {
-        output.innerHTML="BAD A** N***A ENTER A NUMBER";
+        output.innerHTML="You didn't enter a number!";
     }
     else
     {
@@ -42,7 +42,7 @@ function TheGameIsOn ()
     + GuessesRemain + ".";
     if (Guess>SecretNumber)
     {
-     output.innerHTML="WOOW TOOOOOOO BIG N***A" + GameStatus;
+     output.innerHTML="It's too big. Try again!" + GameStatus;
      if (GuessesRemain<1)
      {
         GameEnd ();
@@ -50,7 +50,7 @@ function TheGameIsOn ()
     }
     else if (Guess<SecretNumber)
          {
-            output.innerHTML= "Oh... It's... So small?"+ GameStatus;
+            output.innerHTML= "Oh...It'so small!Try again!"+ GameStatus;
             if (GuessesRemain<1)
            {
             GameEnd ();
@@ -66,12 +66,12 @@ function GameEnd ()
 {
     if (GameWinner===true)
     {
-        output.innerHTML="OH YEAH BABY YOU ARE THE WINNER. It was "+SecretNumber + "<br>"+
-        "You tried this " + GuessesMade + " times!";
+        output.innerHTML="My avations! You're a winner. The right answer was "+SecretNumber + "<br>"+
+        "You tried this " + GuessesMade + " timeMy avations!You're a winner. The right answer wass!";
     }
     else
     {
-        output.innerHTML="LOSEEEEEEEEEEEEEEEEEEEEEEER. " + "<br>"+
+        output.innerHTML="The game is over! You lost!" + "<br>"+
         "It was "+SecretNumber ;
     }
     button.removeEventListener("click", clickCatcher, false);
