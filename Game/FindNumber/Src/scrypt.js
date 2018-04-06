@@ -24,22 +24,26 @@ function clickCatcher()
 }
 function VaLiDaToR()
 {
-    Guess=parseInt(input.value);
-    if (isNaN(Guess))
+    Guess = parseInt(input.value);
+    input.value = "";
+    if(isNaN(Guess))
     {
-        output.innerHTML="You didn't enter a number!";
+    output.innerHTML ="Please enter a number!";
     }
-    else
-    {
+    else if(Guess < 0 || Guess > 99)
+        {
+        output.innerHTML ="Please enter a number from 0 to 99!";
+        }
+        else
+        {
         TheGameIsOn();
-    }
+        }
 }
 function TheGameIsOn ()
 {
     GuessesRemain -=1;
     GuessesMade +=1;
-    GameStatus= " Сделано попыток:  " + GuessesMade + ". Осталось: "
-    + GuessesRemain + ".";
+    GameStatus= "Attempts made: "+GuessesMade+". Remain: "+GuessesRemain+".";
     if (Guess>SecretNumber)
     {
      output.innerHTML="It's too big. Try again!" + GameStatus;
@@ -61,13 +65,14 @@ function TheGameIsOn ()
                 GameWinner= true;
                 GameEnd ();
             }
+    render();
 }
 function GameEnd ()
 {
     if (GameWinner===true)
     {
         output.innerHTML="My avations! You're a winner. The right answer was "+SecretNumber + "<br>"+
-        "You tried this " + GuessesMade + " timeMy avations!You're a winner. The right answer wass!";
+        "You tried this " + GuessesMade + " time!";
     }
     else
     {
@@ -78,9 +83,8 @@ function GameEnd ()
     button.disabled=true;
     window.removeEventListener("keydown", keydownHandler, false);
     input.disabled=true;
-    render();
 }
-function render()
+function render ()
 {
-arrow.style.left = playersGuess * 3 + "px";
+arrow.style.left = Guess* 3 + "px";
 }

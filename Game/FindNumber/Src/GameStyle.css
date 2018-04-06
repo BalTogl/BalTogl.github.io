@@ -3,15 +3,20 @@ body
     font-family:"Segoe UI", Helvetica ;
     text-align: left;
     background:url("../Image/gamebaltogl1.jpg");
+    font-size: large
+}
+input
+{
+    font-size: large;
 }
 #GodKnowsITry
 {
-   height: 550px;
-   background:url("../Image/1488.jpg");
-   width: 750px;
+   height: 400px;
+   background:url("../Image/game.jpg");
+   width: 550px;
    margin: 0 auto;
-   padding-left: 50px;
-   padding-top: 250px;
+   padding-left: 250px;
+   padding-top: 400px;
 }
 h1
 {
