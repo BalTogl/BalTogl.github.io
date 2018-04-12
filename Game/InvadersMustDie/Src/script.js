@@ -1,16 +1,29 @@
-var SecretNumber= Math.floor(Math.random() * 100);
-console.log(SecretNumber);
-var Guess=0;
-var GuessesRemain = 7;
-var GuessesMade = 0;
-var GameStatus= "";
-var GameWinner= false;
-var input=document.querySelector ("#input");
-var output=document.querySelector ("#output");
-var button=document.querySelector ("button");
+var AlienX = Math.floor(Math.random() * 280);
+var AlienY = 20;
+var FireX = 0;
+var FireY = 0;
+var ShotsRemain = 8;
+var ShotsMade = 0;
+var GameStatus = "";
+var GameWinner = false;
+var cannon = document.querySelector("#cannon");
+var alien = document.querySelector("#alien");
+var missile = document.querySelector("#missile");
+var inputX = document.querySelector("#inputX");
+var inputY = document.querySelector("#inputY");
+var output = document.querySelector("#output");
+var button = document.querySelector("button");
+button.style.cursor = "pointer";
 button.addEventListener("click", clickCatcher, false);
-var arrow = document.querySelector("#arrow");
 window.addEventListener("keydown", keydownCatcher, false);
+function render()
+{
+alien.style.left = AlienX + "px";
+alien.style.top = AlienY + "px";
+cannon.style.left = FireX + "px";
+missile.style.left = FireX + "px";
+missile.style.top = FireY + "px";
+}
 function keydownCatcher(event)
 {
     if(event.keyCode===13)
@@ -24,15 +37,15 @@ function clickCatcher()
 }
 function VaLiDaToR()
 {
-    Guess = parseInt(input.value);
-    input.value = "";
-    if(isNaN(Guess))
+    FireX = parseInt(inputX.value);
+    FireY = parseInt(inputY.value);
+    if(isNaN(FireX, FireY))
     {
-    output.innerHTML ="Please enter a number!";
+    output.innerHTML ="Please enter a coordinate!";
     }
-    else if(Guess < 0 || Guess > 99)
+    else if(FireX < 0 || FireX > 280 || FireY < 0 || FireY>250)
         {
-        output.innerHTML ="Please enter a number from 0 to 99!";
+        output.innerHTML ="Comrade, ENTER A  CORRECT COORDINATE FASTER!";
         }
         else
         {
@@ -41,50 +54,48 @@ function VaLiDaToR()
 }
 function TheGameIsOn ()
 {
-    GuessesRemain -=1;
-    GuessesMade +=1;
-    GameStatus= "Attempts made: "+GuessesMade+". Remain: "+GuessesRemain+".";
-    if (Guess>SecretNumber)
-    {
-     output.innerHTML="It's too big. Try again!" + GameStatus;
-     if (GuessesRemain<1)
-     {
-        GameEnd ();
-     }
-    }
-    else if (Guess<SecretNumber)
-         {
-            output.innerHTML= "Oh...It'so small!Try again!"+ GameStatus;
-            if (GuessesRemain<1)
-           {
-            GameEnd ();
-           }
-         }
-         else
+    ShotsRemain -= 1;
+    ShotsMade += 1;
+    GameStatus = "<br>Выстрелы: " + ShotsMade + ". Осталось: "
+    + ShotsRemain + ".";
+    if(FireX >= AlienX && FireX <= AlienX + 20)
+        {
+        if(FireY >= AlienY && FireY <= AlienY + 20)
             {
-                GameWinner= true;
-                GameEnd ();
+            GameWinner = true;
+            GameEnd();
             }
-    render();
+        }
+    else
+        {
+        output.innerHTML = "Мимо!" + GameStatus;
+        if (ShotsRemain < 1)
+            {
+            GameEnd();
+            }
+        }
+if(!GameWinner)
+    {
+    AlienX = Math.floor(Math.random() * 280);
+    AlienY += 30;
+    }
+render();
+console.log("X: " + AlienX);
+console.log("Y: " + AlienY);
 }
 function GameEnd ()
 {
-    if (GameWinner===true)
-    {
-        output.innerHTML="My avations! You're a winner. The right answer was "+SecretNumber + "<br>"+
-        "You tried this " + GuessesMade + " time!";
-    }
+    if(GameWinner)
+        {
+        output.innerHTML= "Победа! Вы спасли планету!" + "<br>"
+        + "Израсходовано ракет: " + ShotsMade + ".";
+        }
     else
-    {
-        output.innerHTML="The game is over! You lost!" + "<br>"+
-        "It was "+SecretNumber ;
-    }
+        {
+        output.innerHTML= "Вы проиграли!" + "<br>" + "Вторжение началось!";
+        }
     button.removeEventListener("click", clickCatcher, false);
     button.disabled=true;
     window.removeEventListener("keydown", keydownHandler, false);
     input.disabled=true;
-}
-function render ()
-{
-arrow.style.left = Guess* 3 + "px";
 }

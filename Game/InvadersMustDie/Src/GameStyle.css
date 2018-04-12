@@ -1,4 +1,4 @@
-body
+/* body
 {
     font-family:"Segoe UI", Helvetica ;
     text-align: left;
@@ -38,6 +38,7 @@ a
    color: #ffa000;
    text-decoration: none;
 }
+*/
 button
 {
 font-family: "Segoe UI", sans-serif;
@@ -74,27 +75,42 @@ background: linear-gradient(top, #858565, #c5c9a9);
 #stage
 {
 width: 300px;
-height: 33px;
+height: 300px;
 position: relative;
 }
-#scale
+#background
 {
 width: 300px;
-height: 33px;
+height: 300px;
 position: absolute;
 top: 0px;
 left: 0px;
-background-image: url(../Image/scale.png);
+background-image: url(../Image/background.png);
 }
-#arrow
+#cannon
 {
-width: 17px;
-height: 22px;
+width: 20px;
+height: 20px;
 position: absolute;
-top: 0px;
-left: 0px;
-background-image: url(../Image/arrow.png);
--webkit-transition: left 0.5s ease-out 0s;
--moz-transition: left 0.5s ease-out 0s;
-transition: left 0.5s ease-out 0s;
+top: 270px;
+left: 140px;
+background-image: url(../Image/cannon.png);
+}
+#alien
+{
+width: 20px;
+height: 20px;
+position: absolute;
+top: 20px;
+left: 80px;
+background-image: url(../Image/alien.png);
+}
+#missile
+{
+width: 10px;
+height: 10px;
+position: absolute;
+top: 240px;
+left: 145px;
+background-image: url(../Image/missile.png);
 }
