@@ -113,12 +113,12 @@ transition: top 0.2s ease-out 0s;
 }
 #missile
 {
-width: 15px;
-height: 15px;
+width: 20px;
+height: 20px;
 position: absolute;
 top: 360px;
 left: 218px;
-background-image: url(../Image/missile.png);
+background-image: url(../Image/bitC.png);
 -webkit-transition: top 0.2s ease-out 0.3s;
 transition: top 0.2s ease-out 0.3s;
 }
