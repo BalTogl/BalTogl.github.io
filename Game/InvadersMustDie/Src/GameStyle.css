@@ -1,8 +1,10 @@
 /* body
+{
     font-family:"Segoe UI", Helvetica ;
     text-align: left;
     background:url("../Image/gamebaltogl1.jpg");
     font-size: large
+}
 input
 {
     font-size: large;
@@ -83,7 +85,7 @@ height: 450px;
 position: absolute;
 top: 0px;
 left: 0px;
-background-image: url(../Image/fonIgri.jpg);
+background-image: url(../Image/fonigri.jpg);
 }
 #cannon
 {
