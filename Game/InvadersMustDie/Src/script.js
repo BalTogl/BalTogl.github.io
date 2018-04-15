@@ -1,5 +1,5 @@
-var AlienX = Math.floor(Math.random() * 280);
-var AlienY = 20;
+var AlienX = Math.floor(Math.random() * 420);
+var AlienY = 30;
 var FireX = 0;
 var FireY = 0;
 var ShotsRemain = 8;
@@ -13,6 +13,7 @@ var inputX = document.querySelector("#inputX");
 var inputY = document.querySelector("#inputY");
 var output = document.querySelector("#output");
 var button = document.querySelector("button");
+var boom = document.querySelector("#boom");
 button.style.cursor = "pointer";
 button.addEventListener("click", clickCatcher, false);
 window.addEventListener("keydown", keydownCatcher, false);
@@ -23,6 +24,7 @@ alien.style.top = AlienY + "px";
 cannon.style.left = FireX + "px";
 missile.style.left = FireX + "px";
 missile.style.top = FireY + "px";
+// if про boom
 }
 function keydownCatcher(event)
 {
@@ -43,7 +45,7 @@ function VaLiDaToR()
     {
     output.innerHTML ="Please enter a coordinate!";
     }
-    else if(FireX < 0 || FireX > 280 || FireY < 0 || FireY>250)
+    else if(FireX < 0 || FireX > 420 || FireY < 0 || FireY>375)
         {
         output.innerHTML ="Comrade, ENTER A  CORRECT COORDINATE FASTER!";
         }
@@ -58,9 +60,9 @@ function TheGameIsOn ()
     ShotsMade += 1;
     GameStatus = "<br>Выстрелы: " + ShotsMade + ". Осталось: "
     + ShotsRemain + ".";
-    if(FireX >= AlienX && FireX <= AlienX + 20)
+    if(FireX >= AlienX && FireX <= AlienX + 30)
         {
-        if(FireY >= AlienY && FireY <= AlienY + 20)
+        if(FireY >= AlienY && FireY <= AlienY + 30)
             {
             GameWinner = true;
             GameEnd();
@@ -76,8 +78,8 @@ function TheGameIsOn ()
         }
 if(!GameWinner)
     {
-    AlienX = Math.floor(Math.random() * 280);
-    AlienY += 30;
+    AlienX = Math.floor(Math.random() * 420);
+    AlienY += 45;
     }
 render();
 console.log("X: " + AlienX);

@@ -74,14 +74,14 @@ background: linear-gradient(top, #858565, #c5c9a9);
 }
 #stage
 {
-width: 300px;
-height: 300px;
+width: 450px;
+height: 450px;
 position: relative;
 }
 #background
 {
-width: 300px;
-height: 300px;
+width: 450px;
+height: 450px;
 position: absolute;
 top: 0px;
 left: 0px;
@@ -89,28 +89,40 @@ background-image: url(../Image/background.png);
 }
 #cannon
 {
-width: 20px;
-height: 20px;
+width: 30px;
+height: 30px;
 position: absolute;
-top: 270px;
-left: 140px;
+top: 405px;
+left: 210px;
 background-image: url(../Image/cannon.png);
+-webkit-transition: left 0.3s ease-out 0s;
+transition: left 0.3s ease-out 0s;
 }
 #alien
 {
-width: 20px;
-height: 20px;
+width: 30px;
+height: 30px;
 position: absolute;
-top: 20px;
-left: 80px;
+top: 30px;
+left: 120px;
 background-image: url(../Image/alien.png);
+-webkit-transition: left 0.2s ease-out 0s;
+transition: left 0.2s ease-out 0s;
+-webkit-transition: top 0.2s ease-out 0s;
+transition: top 0.2s ease-out 0s;
 }
 #missile
 {
-width: 10px;
-height: 10px;
+width: 15px;
+height: 15px;
 position: absolute;
-top: 240px;
-left: 145px;
+top: 360px;
+left: 218px;
 background-image: url(../Image/missile.png);
+-webkit-transition: top 0.2s ease-out 0.3s;
+transition: top 0.2s ease-out 0.3s;
+}
+#boom
+{
+   display: none;
 }
