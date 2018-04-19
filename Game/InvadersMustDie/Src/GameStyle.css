@@ -1,4 +1,4 @@
-/* body
+body
 {
     font-family:"Segoe UI", Helvetica ;
     background:url("../Image/baltogl фон 2.jpg");
@@ -12,7 +12,6 @@ input
 {
    height: 400px;
    width: 550px;
-   background:url("../Image/kvadrat2.jpg");
    margin: 0 auto;
 }
 h1
