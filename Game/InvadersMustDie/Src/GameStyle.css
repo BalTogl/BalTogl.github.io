@@ -12,8 +12,9 @@ input
 #GodKnowsITry
 {
    height: 400px;
-   background:url("../Image/kvadrat2.jpg");
    width: 550px;
+   background:url("../Image/kvadrat2.jpg");
+   display: block;
    margin: 0 auto;
 }
 h1
