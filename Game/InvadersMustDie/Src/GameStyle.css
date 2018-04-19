@@ -1,7 +1,6 @@
 /* body
 {
     font-family:"Segoe UI", Helvetica ;
-    text-align: left;
     background:url("../Image/gamebaltogl1.jpg");
     font-size: large
 }
@@ -14,8 +13,9 @@ input
    height: 400px;
    width: 550px;
    background:url("../Image/kvadrat2.jpg");
-   display: block;
    margin: 0 auto;
+   padding-left: 500;
+   padding-top: 0;
 }
 h1
 {
