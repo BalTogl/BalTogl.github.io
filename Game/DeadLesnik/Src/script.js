@@ -164,7 +164,7 @@ function dropItem()
     }
     else
     {
-    gameMessage = "У вас нечего нет.";
+    gameMessage = "У вас ничего нет.";
     }
 }
 function useItem()
