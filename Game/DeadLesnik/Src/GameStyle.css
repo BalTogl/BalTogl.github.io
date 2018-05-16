@@ -3,6 +3,7 @@ body
     font-family:"Segoe UI", Helvetica ;
     text-align: left;
     font-size: large
+    background:url("../Image/backLesnik.jpg");
 }
 input
 {
